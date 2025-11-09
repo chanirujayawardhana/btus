@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Between Us – Minimal & Elegant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="min-h-screen bg-gradient-to-b from-black via-neutral-900 to-neutral-800 text-white flex flex-col items-center justify-center relative overflow-hidden"
+  >
+    <!-- Background Glow -->
+    <div
+      class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.1),transparent_70%)] pointer-events-none"
+    ></div>
+
+    <!-- Logo + Tagline -->
+    <div class="relative z-10 text-center mb-10">
+      <img
+        src="Between Us Logo_White.png"
+        alt="Between Us Logo"
+        class="mx-auto w-auto h-20 object-contain"
+      />
+      <p class="text-neutral-300 text-lg tracking-wide mt-4 uppercase">
+        Minimal & Elegant
+      </p>
+    </div>
+
+    <!-- Intro -->
+    <p
+      class="max-w-xl text-neutral-400 mb-8 text-center relative z-10 px-4 leading-relaxed"
+    >
+      Our official website is coming soon. For collaborations, appointments, or
+      inquiries — reach out below.
+    </p>
+
+    <!-- Buttons -->
+    <div class="flex flex-wrap justify-center gap-4 mb-10 relative z-10">
+      <a
+        href="https://instagram.com/betweenus.official"
+        target="_blank"
+        class="rounded-full bg-white/10 hover:bg-white/20 px-4 py-2 inline-flex items-center gap-2"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10zm6-1a1 1 0 110 2 1 1 0 010-2z"
+          />
+        </svg>
+        Instagram
+      </a>
+
+      <a
+        href="mailto:hello@betweenus.lk"
+        class="rounded-full bg-white text-black hover:bg-neutral-200 px-4 py-2 inline-flex items-center gap-2"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M16 12l-4 4m0 0l-4-4m4 4V8"
+          />
+        </svg>
+        Contact
+      </a>
+
+      <a
+        href="https://wa.me/94771234567"
+        target="_blank"
+        class="rounded-full bg-white/10 hover:bg-white/20 px-4 py-2 inline-flex items-center gap-2"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M8 12h.01M12 12h.01M16 12h.01"
+          />
+        </svg>
+        WhatsApp
+      </a>
+    </div>
+
+    <!-- Contact Form -->
+    <div
+      class="relative z-10 w-full max-w-lg bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6"
+    >
+      <h3 class="text-lg font-semibold mb-4 text-center">Get in Touch</h3>
+      <form
+        id="contact-form"
+        class="space-y-4"
+        onsubmit="event.preventDefault(); handleSubmit();"
+      >
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          required
+          class="w-full rounded-xl bg-white/10 px-3 py-2 outline-none focus:ring-1 focus:ring-white/40"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+          class="w-full rounded-xl bg-white/10 px-3 py-2 outline-none focus:ring-1 focus:ring-white/40"
+        />
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Contact Number"
+          class="w-full rounded-xl bg-white/10 px-3 py-2 outline-none focus:ring-1 focus:ring-white/40"
+        />
+        <textarea
+          name="message"
+          rows="4"
+          placeholder="Message"
+          required
+          class="w-full rounded-xl bg-white/10 px-3 py-2 outline-none focus:ring-1 focus:ring-white/40"
+        ></textarea>
+        <button
+          type="submit"
+          class="rounded-full w-full bg-white text-black py-2 font-medium hover:bg-neutral-200 transition"
+        >
+          Send Message
+        </button>
+        <p
+          id="form-status"
+          class="text-center text-sm mt-3 hidden"
+        ></p>
+      </form>
+    </div>
+
+    <!-- Footer -->
+    <footer
+      class="text-xs text-neutral-500 mt-12 border-t border-white/10 pt-6 text-center relative z-10"
+    >
+      <p>© <span id="year"></span> Between Us. All rights reserved.</p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      function handleSubmit() {
+        const status = document.getElementById("form-status");
+        status.classList.remove("hidden");
+        status.textContent = "Thank you! We’ll be in touch soon.";
+        status.classList.add("text-emerald-400");
+        document.getElementById("contact-form").reset();
+      }
+    </script>
+  </body>
+</html>
